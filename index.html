@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+<!-- ***********************************
+        BODY WITH EMPTY CLASS TO BE 
+        ABLE TO CHANGE CLASS ON THE FLY
+************************************ -->
+    <body class="main">
+   
+    <!-- ***********************************
+            HEADERS FOR EACH PAGE
+    ************************************ -->     
+        <!-- Main header-->
+        <header id="h_main">
+            <h2>Goulbour Museum Touring App</h2>   
+            <a href="#syncLnk">sync</a>
+        </header>
+        <!-- Details header-->
+        <header id="h_details">
+            <h2>Goulbour Museum Touring App</h2>
+            <a href="backLnk">back</a>
+        </header>
+        <!-- Destination header-->
+        <header id="h_destinations">
+            <h2>Goulbour Museum Touring App</h2>
+            <a href="#backLnk">back</a>
+        </header>
+
+    <!-- ***********************************
+            NAV FOR PAGE THAT NEED THEM
+    ************************************ -->
+        <nav id="n_details">
+            <ul>
+                <li>
+                    <a href="#mapLnk">Map</a>
+                </li>
+                <li>
+                    <a href="#detailLnk">Info</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="n_destinations">
+            <ul>
+                <li>
+                    <a href="#mapLnk">Map</a>
+                </li>
+                <li>
+                    <a href="#detailLnk">Info</a>
+                </li>
+                <li>
+                    <a href="#mediaLnk">Media</a>
+                </li>
+            </ul>
+        </nav>
+
+    <!-- **************************************
+            SECTIONS WHICH ARE THE PAGES
+    *************************************** -->
+        <section data-role="page" id="s_mainPage">
+            <!-- List of all the Tours-->
+            <ul id="tourListContainer" class="tourList">
+
+            </ul>
+        </section>
+        <section data-role="page" id="s_mapDetailsPage">
+            <button>Start Tour</button>
+        </section>
+        <section data-role="page" id="s_infoDetailsPage">
+            <button>Start Tour</button>
+        </section>
+        <section data-role="page" id="s_mapDestinationPage">
+            <nav>
+                <ul>
+                    <li><a href="#prev">prev</a></li>
+                    <li><a href="#next">next</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section data-role="page" id="s_infoDestinationPage">
+            <nav>
+                <ul>
+                    <li><a href="#prev">prev</a></li>
+                    <li><a href="#next">next</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section data-role="page" id="s_mediaDestinationPage">
+            <nav>
+                <ul>
+                    <li><a href="#prev">prev</a></li>
+                    <li><a href="#next">next</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz88H1EXWvQNh8hHEhUG1wiWFVidGkobU&sensor=true"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
