@@ -37,7 +37,7 @@ function checkDB(){
 				//otherwise your new version will be an empty DB
 				alert("DB version incremented");
 				//do the inition setup
-				trans.executeSql('CREATE TABLE IF NOT EXISTS destinations (tour_id INTEGER UNSIGNED NOT NULL, seq_num INTEGER UNSIGNED NOT NULL, destination_name TEXT NOT NULL, destination_description TEXT NOT NULL, latitude TEXT NOT NULL, longitude TEXT NOT NULL, destination_image TEXT NOT NULL, image_mime TEXT NOT NULL, PRIMARY KEY(tour_id))', [],
+				trans.executeSql('CREATE TABLE IF NOT EXISTS destinations (destination_id INTEGER UNSIGNED NOT NULL AUTOINCREMENT, tour_id INTEGER UNSIGNED NOT NULL, seq_num INTEGER UNSIGNED NOT NULL, destination_name TEXT NOT NULL, destination_description TEXT NOT NULL, latitude TEXT NOT NULL, longitude TEXT NOT NULL, destination_image TEXT NOT NULL, image_mime TEXT NOT NULL, PRIMARY KEY(destination_id))', [],
 					function(tx, rs){
 						//do something if it works
 						alert("Table destinations created");
