@@ -24,41 +24,65 @@ function init(){
 
 function checkDB(){
 	//once deviceready app starts
-	console.info("deviceready");
+	alert("deviceready");
 	db = openDatabase('sample', '', 'Sample Db', 1024*1024);
+	alert(db.version);
 	if(db.version == ''){
-		console.info('First time running... create tables');
+		alert('First time running... create tables');
 		//means first time creation of DB
 		//increment the version and create the tables
 		db.changeVersion('', '1.0',
 			function(trans){
 				//something to do in addition to incrementing the value
 				//otherwise your new version will be an empty DB
-				console.info("DB version incremented");
+				alert("DB version incremented");
 				//do the inition setup
-				trans.executeSql('CREATE TABLE stuff(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)', [],
+				trans.executeSql('CREATE TABLE IF NOT EXISTS destinations (tour_id INTEGER UNSIGNED NOT NULL, seq_num INTEGER UNSIGNED NOT NULL, destination_name TEXT NOT NULL, destination_description TEXT NOT NULL, latitude TEXT NOT NULL, longitude TEXT NOT NULL, destination_image TEXT NOT NULL, image_mime TEXT NOT NULL, PRIMARY KEY(tour_id))', [],
 					function(tx, rs){
 						//do something if it works
-						console.info("Table stuff created");
+						alert("Table destinations created");
 					},
 					function(tx, err){
 						//failed to run query
-						console.info( err.message);
+						alert("YES destinations err " + err.message);
 					});
-				trans.executeSql('INSERT INTO stuff(name) VALUES(?)', ["Cheese"],
+				trans.executeSql('CREATE TABLE IF NOT EXISTS tours (tour_id INTEGER UNSIGNED NOT NULL AUTOINCREMENT, tour_name TEXT NOT NULL, tour_description TEXT NOT NULL, tour_image TEXT NOT NULL, active INTEGER NOT NULL, PRIMARY KEY(tour_id))', [],
+					function(tx, rs){
+						//do something if it works
+						alert("Table tour created");
+					},
+					function(tx, err){
+						//failed to run query
+						alert("YES tours err " + err.message);
+					});
+				trans.executeSql('CREATE TABLE IF NOT EXISTS tour_media (media_id INTEGER UNSIGNED NOT NULL, file_name TEXT NOT NULL, mime_type TEXT NOT NULL, tour_id INTEGER UNSIGNED NOT NULL, approved INTEGER NOT NULL DEFAULT "1", install_id INTEGER UNSIGNED NOT NULL DEFAULT "1", ip_address TEXT NOT NULL, PRIMARY KEY(media_id))', [],
+					function(tx, rs){
+						//do something if it works
+						alert("Table tour_media created");
+					},
+					function(tx, err){
+						//failed to run query
+						alert("YES tour_media err " + err.message);
+					});
+
+
+
+
+
+				trans.executeSql('INSERT INTO destinations (tour_id) VALUES(?)', ["1"],
 					function(tx, rs){
 						//do something if works, as desired
-						console.info("Added row in stuff");
+						alert("Added row in stuff");
 					},
 					function(tx, err){
 						//failed to run query
-						console.info( err.message);
+						alert( err.message);
 					});
 			},
 			function(err){
 				//error in changing version
 				//if the increment fails
-				console.info( err.message);
+				alert( err.message);
 			},
 			function(){
 				//successfully completed the transaction of incrementing the version number
@@ -67,7 +91,7 @@ function checkDB(){
 	}else{
 		//version should be 1.0
 		//this won't be the first time running the app
-		console.info('Version: ', db.version);
+		alert('Version: ' + db.version);
 		addNavHandlers();
 	}
 }
