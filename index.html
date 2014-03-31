@@ -6,56 +6,56 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Tour App</title>
     </head>
 <!-- ***********************************
         BODY WITH EMPTY CLASS TO BE 
         ABLE TO CHANGE CLASS ON THE FLY
 ************************************ -->
-    <body class="main">
+    <body id="bodySec" class="">
    
     <!-- ***********************************
             HEADERS FOR EACH PAGE
     ************************************ -->     
         <!-- Main header-->
-        <header id="h_main">
+        <header id="h_main" class="" data-role="header">
             <h2>Goulbour Museum Touring App</h2>   
-            <a href="#syncLnk">sync</a>
+            <a id="syncData" href="#syncLnk" data-role="link">sync</a>
         </header>
         <!-- Details header-->
-        <header id="h_details">
+        <header id="h_details" class="" data-role="header">
             <h2>Goulbour Museum Touring App</h2>
-            <a href="backLnk">back</a>
+            <a href="backLnk" data-role="link">back</a>
         </header>
         <!-- Destination header-->
-        <header id="h_destinations">
+        <header id="h_destinations" class="" data-role="header">
             <h2>Goulbour Museum Touring App</h2>
-            <a href="#backLnk">back</a>
+            <a href="#backLnk" data-role="link">back</a>
         </header>
 
     <!-- ***********************************
             NAV FOR PAGE THAT NEED THEM
     ************************************ -->
-        <nav id="n_details">
+        <nav class="tabs" id="n_details">
             <ul>
-                <li>
-                    <a href="#mapLnk">Map</a>
+                <li class="li-1-2">
+                    <a href="#s_mapDetailsPage" data-role="link">Map</a>
                 </li>
-                <li>
-                    <a href="#detailLnk">Info</a>
+                <li class="li-1-2">
+                    <a href="#s_infoDetailsPage" data-role="link">Info</a>
                 </li>
             </ul>
         </nav>
-        <nav id="n_destinations">
+        <nav class="tabs" id="n_destinations">
             <ul>
-                <li>
-                    <a href="#mapLnk">Map</a>
+                <li class="li-1-3">
+                    <a href="#s_mapDestinationPage" data-role="link">Map</a>
                 </li>
-                <li>
-                    <a href="#detailLnk">Info</a>
+                <li class="li-1-3">
+                    <a href="#s_infoDestinationPage" data-role="link">Info</a>
                 </li>
-                <li>
-                    <a href="#mediaLnk">Media</a>
+                <li class="li-1-3">
+                    <a href="#s_mediaDestinationPage" data-role="link">Media</a>
                 </li>
             </ul>
         </nav>
@@ -63,39 +63,44 @@
     <!-- **************************************
             SECTIONS WHICH ARE THE PAGES
     *************************************** -->
-        <section data-role="page" id="s_mainPage">
+        <section data-role="page" id="s_mainPage" class="">
             <!-- List of all the Tours-->
             <ul id="tourListContainer" class="tourList">
-
+                
             </ul>
         </section>
-        <section data-role="page" id="s_mapDetailsPage">
+        <section data-role="page" id="s_mapDetailsPage" class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo eros, vel consectetur velit auctor non. Maecenas placerat quam velit, et pellentesque enim convallis eu.</p>
             <button>Start Tour</button>
         </section>
-        <section data-role="page" id="s_infoDetailsPage">
+        <section data-role="page" id="s_infoDetailsPage" class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo eros, vel consectetur velit auctor non. Maecenas placerat quam velit, et pellentesque enim convallis eu.</p>
             <button>Start Tour</button>
         </section>
-        <section data-role="page" id="s_mapDestinationPage">
+        <section data-role="page" id="s_mapDestinationPage" class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo eros, vel consectetur velit auctor non. Maecenas placerat quam velit, et pellentesque enim convallis eu.</p>
             <nav>
                 <ul>
-                    <li><a href="#prev">prev</a></li>
-                    <li><a href="#next">next</a></li>
+                    <li><a href="#prev" data-role="link">prev</a></li>
+                    <li><a href="#next" data-role="link">next</a></li>
                 </ul>
             </nav>
         </section>
-        <section data-role="page" id="s_infoDestinationPage">
+        <section data-role="page" id="s_infoDestinationPage" class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo eros, vel consectetur velit auctor non. Maecenas placerat quam velit, et pellentesque enim convallis eu.</p>
             <nav>
                 <ul>
-                    <li><a href="#prev">prev</a></li>
-                    <li><a href="#next">next</a></li>
+                    <li><a href="#prev" data-role="link">prev</a></li>
+                    <li><a href="#next" data-role="link">next</a></li>
                 </ul>
             </nav>
         </section>
-        <section data-role="page" id="s_mediaDestinationPage">
+        <section data-role="page" id="s_mediaDestinationPage" class="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis leo eros, vel consectetur velit auctor non. Maecenas placerat quam velit, et pellentesque enim convallis eu.</p>
             <nav>
                 <ul>
-                    <li><a href="#prev">prev</a></li>
-                    <li><a href="#next">next</a></li>
+                    <li><a href="#prev" data-role="link">prev</a></li>
+                    <li><a href="#next" data-role="link">next</a></li>
                 </ul>
             </nav>
         </section>
